@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+ Route::get('serie', function () {
+     return view('serie-tv');
+ })->name('serie-tv');
+
+
+ Route::get('/actors', function () {
+     return view('attori');
+ })->name('attori');
+
+ Route::get('/genere-serie', function () {
+     $data =[
+         'genere' => 'genere-serie',
+         'anno-serie' => 'Serie netflix 2021'
+
+     ];
+    return view('genere', $data);
+})->name('genere');
